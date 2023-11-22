@@ -1,0 +1,78 @@
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.main {
+    display: flex;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 0px;
+    background-color: #ffd8ad;
+    align-items: center;
+}
+
+.headerTitle {
+    position: absolute;
+    color: #d68227;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+.content {
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    background-color: #fff1d7;
+    bottom: 0px;
+}
+
+.cardViewer {
+    position: absolute;
+    height: 70%;
+    width: 23%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid;
+    border-color: black;
+    background-color: #ffffff;
+}
+
+/* .aside {
+    flex-grow: 0.3;
+}
+
+.content {
+    flex-grow: 0.7;
+}
+#listContainer{
+    height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+    border: black 1px solid;
+}
+
+.launchPads {
+	fill: orange;
+	opacity:1.0;
+}
+
+.transparentLaunchPads {
+	fill: white;
+	opacity:0.0;
+}
+
+.selectedLaunchPad {
+	fill: red;
+	opacity:1.0;
+} */
+
+/*# sourceMappingURL=/src.a2b27638.css.map */
