@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Container, TextField, Typography, MenuItem, FormControlLabel, FormGroup, Checkbox, Box } from '@mui/material';
-import {useEffect, useState, useRef} from "react";
+import { Container, TextField, FormControlLabel, FormGroup, Checkbox, Box } from '@mui/material';
 
 
 function OptionalInput(props){

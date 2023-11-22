@@ -1,24 +1,28 @@
 import * as React from 'react';
-import { Container, TextField, Typography, MenuItem, Button } from '@mui/material';
-import {useEffect, useState, useRef} from "react";
+import { Container, TextField, MenuItem, Button } from '@mui/material';
+import { useState } from "react";
 
 
 function EssentialInput(props){
     const cardTemplates = [
             {
-            value: 'Template 1',
-            label: 'Template 1',
+                value: 'Template 1',
+                label: 'Template 1',
+            },
+            {
+                value: 'Template 2',
+                label: 'Template 2',
             }
         ];
 
     const cardTypes = [
             {
-            value: 'Active',
-            label: 'Active',
+                value: 'Active',
+                label: 'Active',
             },
             {
-            value: 'Passive',
-            label: 'Passive',
+                value: 'Passive',
+                label: 'Passive',
             }
         ];
 
@@ -42,6 +46,10 @@ function EssentialInput(props){
         props.setNeedExport(true);
     };
 
+    const handleCardTemplate = (e) => {
+        props.setCardTemplate(e.target.value);
+    };
+
     return (
         <Container sx={{ width: '100%', height: 360, mt: 11, ml: '0%' }}>
             <Container sx={{ width: '100%', height: 180, backgroundColor: '#ffecd7', borderRadius: 0.5, border: 1, borderColor: '#000000' }}>
@@ -58,7 +66,7 @@ function EssentialInput(props){
                     label="Card Template"
                     value={props.cardTemplate}
                     size="small"
-                    onChange={(event) => { props.setCardTemplate(event.target.value); }}
+                    onChange={handleCardTemplate}
                     variant="standard"
                     sx={{ width: '100%', mt: 1.5}}
                     >

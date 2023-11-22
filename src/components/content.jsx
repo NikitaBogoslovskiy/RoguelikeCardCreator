@@ -3,8 +3,8 @@ import { Container, Alert, Fade } from '@mui/material';
 import {CardCreator} from './card_creator.jsx';
 import {EssentialInput} from './essential_input.jsx';
 import {OptionalInput} from './optional_input.jsx';
-import {useEffect, useState, useRef} from "react";
-import originImageSrc from '../../images/front1_example.png';
+import { useState } from "react";
+import originImageSrc from '../../images/example_image.jpg';
 
 
 function Content(props){
@@ -22,7 +22,6 @@ function Content(props){
 
     const [imageSrc, setImageSrc] = useState(originImageSrc);
     const [needExport, setNeedExport] = useState(false);
-
     const [imageWarning, setImageWarning] = useState(false);
 
     return (
@@ -48,7 +47,7 @@ function Content(props){
                     defenseValue = {defenseValue}
                     defenseAll = {defenseAll}
                     characterAbility = {characterAbility}
-                    imageSrc = {imageSrc}
+                    imageSrc = {imageSrc} setImageSrc = {setImageSrc}
                     needExport = {needExport} setNeedExport = {setNeedExport}
                     imageWarning = {imageWarning} setImageWarning = {setImageWarning}
                 />
