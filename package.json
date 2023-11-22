@@ -2,7 +2,7 @@
   "name": "spacexeng",
   "version": "1.0.0",
   "homepage": "https://nikitabogoslovskiy.github.io/RoguelikeCardCreator",
-  "private": false,
+  "private": true,
   "description": "Demo page for SpaceX API",
   "scripts": {
 	"predeploy": "npm run build",
