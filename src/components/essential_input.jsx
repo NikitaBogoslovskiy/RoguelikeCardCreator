@@ -26,7 +26,7 @@ function EssentialInput(props){
             }
         ];
 
-    [file, setFile] = useState(null);
+    const [file, setFile] = useState(null);
     const handleFile = (e) => {
         let file = e.target.files[0];
         if (file == undefined)

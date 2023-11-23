@@ -64,16 +64,16 @@ function CardCreator(props){
     let cardCover2 = new window.Image();
     cardCover2.src = cardCoverSrc2;
 
-    [startX, setStartX] = useState(0);
-    [startY, setStartY] = useState(0);
-    [shiftX, setShiftX] = useState(0);
-    [shiftY, setShiftY] = useState(0);
-    [imageX, setImageX] = useState(1);
-    [imageY, setImageY] = useState(8);
-    [mouseIsDown, setMouseIsDown] = useState(false);
-    [imageScale, setImageScale] = useState(scale);
+    const [startX, setStartX] = useState(0);
+    const [startY, setStartY] = useState(0);
+    const [shiftX, setShiftX] = useState(0);
+    const [shiftY, setShiftY] = useState(0);
+    const [imageX, setImageX] = useState(1);
+    const [imageY, setImageY] = useState(8);
+    const [mouseIsDown, setMouseIsDown] = useState(false);
+    const [imageScale, setImageScale] = useState(scale);
     let scaleCoefficient = 0.05;
-    [cardImage, setCardImage] = useState(cardImg);
+    const [cardImage, setCardImage] = useState(cardImg);
 
     useEffect(() => {
         let newImg = new window.Image();

@@ -9,7 +9,7 @@
     "deploy": "gh-pages -d dist",
     "start": "parcel index.html",
     "test": "jest",
-    "build": "parcel build index.html --dist-dir docs --no-source-maps"
+    "build": "parcel build index.html --dist-dir dist --no-cache --no-source-maps  --public-url ."
   },
   "author": "wolwer1ne",
   "license": "MIT",
