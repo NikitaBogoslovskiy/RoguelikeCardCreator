@@ -20,6 +20,7 @@ import cardCoverSrc1 from '../../images/front1_art_overlay.png';
 import cardCoverSrc2 from '../../images/front2_art_overlay.png';
 import { Stage, Layer, Image, Text, Group } from 'react-konva';
 import {useEffect, useState, useRef} from "react";
+import Konva from 'konva';
 
 
 function CardCreator(props){
@@ -120,6 +121,10 @@ function CardCreator(props){
     };
 
     const stageRef = useRef(null);
+    const layer1Ref = useRef(null);
+    const layer2Ref = useRef(null);
+    const layer3Ref = useRef(null);
+    const layer4Ref = useRef(null);
     useEffect(() => {
         if (props.needExport) {
             const url = stageRef.current.toDataURL({ pixelRatio: 5, height: cardBackground1.height * scale * 1.05, width: cardBackground1.width * scale });
@@ -134,15 +139,23 @@ function CardCreator(props){
         }
     }, [props.needExport]);
 
+    useEffect(() => {
+        document.body.style.zoom = "150%";
+        layer1Ref.current.canvas.setPixelRatio(3);
+        layer2Ref.current.canvas.setPixelRatio(3);
+        layer3Ref.current.canvas.setPixelRatio(3);
+        layer4Ref.current.canvas.setPixelRatio(3);
+      }, []);
+
 
     return (
         <Container sx={{ width: 280, height: 360, mt: 11, backgroundColor: '#ffffff', borderRadius: 1, border: 1.06, borderColor: '#000000' }}>
             {props.cardTemplate == 'Template 1' ? (
                 <Stage ref={stageRef} width={270} height={360} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onWheel={handleWheel}>
-                    <Layer>
+                    <Layer ref={layer1Ref}>
                         <Image image={cardBackground1} x={0} y={8} scaleX={scale} scaleY={scale}/>
                     </Layer>
-                    <Layer>
+                    <Layer ref={layer2Ref}>
                         <Group>
                             <Image image={cardImage} x={imageX + shiftX - 73} y={imageY + shiftY - 20} scaleX={imageScale * 1.35} scaleY={imageScale * 1.35}/>
                             <Image 
@@ -157,13 +170,13 @@ function CardCreator(props){
                         <Text text={props.characterName} fontFamily='Cambria' align='center' fontSize={22} fontStyle='bold' fill='#f7eedd' stroke='#6c614b' strokeWidth={0.7} x={16} y={242} width={205} height={10}/>
                         <Text text={props.characterAbility} fontFamily='Constantia' align='center' fontSize={13} fontStyle='normal' fill='#f7eedd' stroke='5f5643' opacity={1.0} strokeWidth={0.1} x={15} y={289} width={205} height={50}/>
                     </Layer>
-                    <Layer visible={props.cardType == "Passive"}>
+                    <Layer ref={layer3Ref} visible={props.cardType == "Passive"}>
                         <Image image={cardPassiveEnergy} x={88} y={175} scaleX={scale} scaleY={scale}/>
                         <Image image={cardDefaultEffect} x={5} y={191} scaleX={scale} scaleY={scale}/>
                         <Image image={cardDefaultEffect} x={199} y={191} scaleX={scale} scaleY={scale}/>
                         <Text text={props.energyValue} fontFamily='Lucida Bright' align='center' fontSize={30} fontStyle='bold' fill='#f7eedd' stroke='#6c614b' strokeWidth={0.4} x={0} y={188} width={236}/>
                     </Layer>
-                    <Layer visible={props.cardType == "Active"}>
+                    <Layer  ref={layer4Ref} visible={props.cardType == "Active"}>
                         <Image image={cardActiveEnergy} x={88} y={175} scaleX={scale} scaleY={scale}/>
                         <Image image={cardDamageEffect} x={5} y={191} scaleX={scale} scaleY={scale}/>
                         <Image image={cardDefenseEffect} x={199} y={191} scaleX={scale} scaleY={scale}/>
